@@ -49,7 +49,7 @@ body {
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 4fr ;
   background-color: #ffffff;
   width: 100%;
 
@@ -231,8 +231,58 @@ body {
   transition: all .5s;
 }
 
+.card__content {
+    padding: 1rem;
+    min-width: 300px;
+
+}
+
+.card__form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card__input {
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.1rem;
+    transition: all .5s;
+    margin: 0.5rem;
+}
+
+.card__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0.5rem;
+}
+
+.card__textarea {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.1rem;
+    height: 100px;
+    resize: none;
+}
+
+.card__submit {
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: #ff914d;
+    font-size: 1.1rem;
+    color: white;
+    transition: all .5s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .card__banner {
-  background-color: var(--color-primary);
+    background-color: #efefef;
   width: 100%;
   border-radius: 1rem;
 }
@@ -245,7 +295,16 @@ body {
 .card__title {
   padding: .7rem;
   font-weight: bold;
-  color: #000;
+  color: var(--color-primary);
+
+}
+.card__title2 {
+  padding: .7rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: #ff914d;
+  color:white;
+  border-radius: 10px;
 
 }
 
@@ -397,4 +456,11 @@ body {
   background-color: #ffc107;
   color:rgb(0, 0, 0);
   transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }

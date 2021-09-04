@@ -1,4 +1,4 @@
-import {html, render, nothing} from 'https://unpkg.com/lit-html?module';
+import { html, render, nothing } from "https://unpkg.com/lit-html?module";
 import json from "./json.js";
 
 const API_KEY = "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";
@@ -35,11 +35,12 @@ const myStudies = [
 
 const myJobs = [
   {
-    title: "Admin. de Sistemas",
+    title: "Técnico Informático",
     pla: "Ayun. de Altura - 2020",
     data: [
       "Active Directory(A.D)",
-      "Implantación y Desarrollo de Aplicaciones Web",
+      "Implantación y Desarrollo de una App para el Control Vacacional",
+      "Desarrollo de Aplicación de Turismo FullStack",
       "Windows Server 2019, Windows 10, Linux(Debian, Arch)...",
       "HelpDesk AnyDesk",
       "Mantenimiento y Reparación de Equipos/Servidores",
@@ -140,6 +141,7 @@ const randomInfo = () => {
   const randomNote = document.getElementById("randomNote");
   const randomInfo = [
     "Me encanta desarrollar en los dos lados de la ecuación, tanto FrontEnd 🖥️  como BackEnd 🧰 . La cuestión es construir cosas.",
+    "Este portfolio está hecho desde 0️⃣ por mí 😁",
     "Busco un lugar donde desarrollar mis habilidades, construir una carrera y convertirme en un mejor profesional 🧰.",
     "Me encanta compartir lo que sé, siempre he tenido un poco de alma de profesor ✏️.",
     "Siempre estoy aprendiendo, ampliando mis conocimientos y habilidades.🧑🏻‍🎓",
@@ -224,24 +226,30 @@ const home = () => html`
       </div>
       <ul class="home__contact">
         <h4 style="color:#ff914d">Contact Me:</h4>
-
         <li class="home__contact-item">
-          <i class="fas fa-envelope"></i>
+          <i style="color: #000" class="fas fa-envelope"></i>
           <span>
             <a href="mailto:mick.altura@gmail.com">mick.altura@gmail.com </a>
+          </span>
+        </li>
+        <!-- make one for web page -->
+        <li class="home__contact-item">
+          <i style="color: #000" class="fas fa-book"></i>
+          <span>
+            <a href="https://emelportfolio.herokuapp.com/"> @emelportfolio </a>
           </span>
         </li>
 
         <!-- add the github -->
         <li class="home__contact-item">
-          <i class="fab fa-github"></i>
+          <i style="color: #000" class="fab fa-github"></i>
           <span>
             <a href="https://github.com/emelcd">@emelcd</a>
           </span>
         </li>
         <!-- make a link for linkedin -->
         <li class="home__contact-item">
-          <i class="fab fa-linkedin"></i>
+          <i style="color: #000" class="fab fa-linkedin"></i>
           <span>
             <a href="https://www.linkedin.com/in/miguel-l%C3%B3pez-7821131b9/">
               Miguel López
@@ -249,7 +257,7 @@ const home = () => html`
           </span>
         </li>
         <li class="home__contact-item">
-          <i class="fas fa-map-marker-alt"></i>
+          <i style="color: #000" class="fas fa-map-marker-alt"></i>
           <span>
             <a
               href="https://www.google.com/maps/place/Valencia/@39.4743283,-0.3552049,16.75z/data=!4m5!3m4!1s0xd604f4cf0efb06f:0xb4a351011f7f1d39!8m2!3d39.4699075!4d-0.3762881"
@@ -267,7 +275,6 @@ const home = () => html`
   </div>
 `;
 
-
 const repos = (data) => html`
   <div class="repo">
     <div class="card">
@@ -276,13 +283,14 @@ const repos = (data) => html`
       </div>
       <div class="card__content">
         <div class="card__banner">
-        <h4 class="card__title">
-          
-          ${data.name}
-          ${data.private
-            ? html`<i style="color:#000" class="fas fa-lock"></i>`
-            : nothing}
-        </h4>
+          <h4 class="card__title2">
+            <a class="card__title2" href="${data.html_url}" target="_blank"
+              >${data.name}</a
+            >
+            ${data.private
+              ? html`<i style="color:#000" class="fas fa-lock"></i>`
+              : nothing}
+          </h4>
         </div>
         <p class="card__text">${data.description}</p>
       </div>
@@ -332,29 +340,61 @@ const repos = (data) => html`
 
 const about = () => {
   let template = html`
-    <h1 class="title__repo">
-      GitHub Repos <i style="color: #000" class="fab fa-github"></i>
-    </h1>
-    <div class="repo-container">${json.map((repo) => repos(repo))}</div>
+      <h1 class="title__repo">
+        GitHub Repos <i style="color: #000" class="fab fa-github"></i>
+      </h1>
+    <div class="repo-container">
+      ${json.map((repo) => repos(repo))}
+    </div>
   `;
   return template;
 };
 
 const contact = () => html`
-  <h1>Contact</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-  </p>
+  <div class="container">  
+    <div class="card">
+      <!-- make a form inside the card with title and subtitle 
+    -->
+      <div class="card__content">
+        <h1 class="card__title">Dejame un recado 🖊️</h1>
+        <h2 class="card__subtitle">
+          ¿Tienes alguna duda? ❔<br />
+           ¿Quieres contratarme? 🤝 <br />
+           Te contesto en menos de 24hrs 🕒 <br />
+           Gracias por tu interés 🙏 <br />
+        </h2>
+        <form class="card__form">
+          <input
+            class="card__input"
+            type="text"
+            placeholder="Nombre/Email"
+            name="name"
+          />
+          <textarea 
+            
+            class="card__textarea"
+            placeholder="Mensaje"
+            name="message"
+          ></textarea>
+          <input
+            class="card__submit"
+            type="submit"
+            value="Enviar ✉️"
+          />
+          </form>
+
+
+      </div>
+    </div>
+</div>
+</div>
 `;
 
 const handleTabs = (e) => {
   console.log(e.target.textContent.trim());
   let tab = e.target.textContent.trim();
   render(
-
-      html` ${tab === "CV" ? home() : tab === "PROJECTS" ? about() : contact()}`
-    ,
+    html` ${tab === "CV" ? home() : tab === "PROYECTOS" ? about() : contact()}`,
     document.getElementById("content")
   );
 };
@@ -371,14 +411,14 @@ const header = () => html`
           <a href="#" class="header__nav-link">CV</a>
         </li>
         <li class="header__nav-item">
-          <a href="#" class="header__nav-link">PROJECTS</a>
+          <a href="#" class="header__nav-link">PROYECTOS</a>
         </li>
         <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Contact</a>
+          <a href="#" class="header__nav-link">CONTACTA</a>
         </li>
       </ul>
     </nav>
-    <div class="header__menu">
+    <!-- <div class="header__menu">
       <i
         @mouseover=${(e) => {
           render(
@@ -406,7 +446,7 @@ const header = () => html`
         }}
         class="fas fa-bars header__menu-icon "
       ></i>
-    </div>
+    </div> -->
     <div id="dropdown" class="dropdown"></div>
   </header>
 `;
