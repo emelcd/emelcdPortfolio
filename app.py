@@ -3,7 +3,6 @@ from os import environ
 from uuid import uuid4
 import json
 from datetime import datetime
-from flask_cors import CORS
 
 # get the time now
 print(datetime.now())
@@ -12,7 +11,6 @@ print(datetime.now())
 api_key = environ.get('API_KEY')
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/')
 def index():
