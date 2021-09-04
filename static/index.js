@@ -363,7 +363,7 @@ const contact = () => html`
            Te contesto en menos de 24hrs 🕒 <br />
            Gracias por tu interés 🙏 <br />
         </h2>
-        <form class="card__form">
+        <form class="card__form" method="POST" action="/msg">
           <input
             class="card__input"
             type="text"
