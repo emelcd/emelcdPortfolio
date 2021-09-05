@@ -284,7 +284,12 @@ const repos = (data) => html`
       <div class="card__content">
         <div class="card__banner">
           <h4 class="card__title2">
-            <a class="card__title2" href="${data.html_url}" target="_blank"
+            <a
+              class="card__title2"
+              href="${data.private
+                ? "https://github.com/emelcd"
+                : data.html_url}"
+              target="_blank"
               >${data.name}</a
             >
             ${data.private
@@ -456,6 +461,3 @@ const app = () => html`
 
 render(app(), document.body);
 
-document.body.addEventListener("click", () => {
-  render(nothing, document.getElementById("dropdown"));
-});
