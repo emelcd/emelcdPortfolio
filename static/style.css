@@ -251,6 +251,11 @@ body {
     margin: 0.5rem;
 }
 
+.card__input:focus {
+    outline: none;
+    border: 1px solid #ff914d;
+}
+
 .card__subtitle {
     font-size: 1.1rem;
     margin-bottom: 1rem;
@@ -269,6 +274,10 @@ body {
     resize: none;
 }
 
+.card__textarea:focus {
+  outline: none;
+  border: 1px solid #ff914d;
+}
 .card__submit {
     padding: 1rem;
     border: none;

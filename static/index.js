@@ -227,18 +227,18 @@ const home = () => html`
       <ul class="home__contact">
         <h4 style="color:#ff914d">Contact Me:</h4>
         <li class="home__contact-item">
+          <i style="color: #000" class="fas fa-book"></i>
+          <span>
+            <a href="https://emelportfolio.herokuapp.com/"> @emelportfolio </a>
+          </span>
+        </li>
+        <li class="home__contact-item">
           <i style="color: #000" class="fas fa-envelope"></i>
           <span>
             <a href="mailto:mick.altura@gmail.com">mick.altura@gmail.com </a>
           </span>
         </li>
         <!-- make one for web page -->
-        <li class="home__contact-item">
-          <i style="color: #000" class="fas fa-book"></i>
-          <span>
-            <a href="https://emelportfolio.herokuapp.com/"> @emelportfolio </a>
-          </span>
-        </li>
 
         <!-- add the github -->
         <li class="home__contact-item">
@@ -340,12 +340,10 @@ const repos = (data) => html`
 
 const about = () => {
   let template = html`
-      <h1 class="title__repo">
-        GitHub Repos <i style="color: #000" class="fab fa-github"></i>
-      </h1>
-    <div class="repo-container">
-      ${json.map((repo) => repos(repo))}
-    </div>
+    <h1 class="title__repo">
+      GitHub Repos <i style="color: #000" class="fab fa-github"></i>
+    </h1>
+    <div class="repo-container">${json.map((repo) => repos(repo))}</div>
   `;
   return template;
 };
@@ -356,7 +354,7 @@ const contact = () => html`
       <!-- make a form inside the card with title and subtitle 
     -->
       <div class="card__content">
-        <h1 class="card__title">Dejame un recado 🖊️</h1>
+        <h1 class="card__title">Déjame un recado 🖊️</h1>
         <h2 class="card__subtitle">
           ¿Tienes alguna duda? ❔<br />
            ¿Quieres contratarme? 🤝 <br />
@@ -421,29 +419,29 @@ const header = () => html`
     <!-- <div class="header__menu">
       <i
         @mouseover=${(e) => {
-          render(
-            html`
-              <ul class="dropdown__list">
-                <li class="dropdown__item">My profile</li>
-                <li class="dropdown__item">My account</li>
-                <li class="dropdown__item">Logout</li>
-              </ul>
-            `,
-            document.getElementById("dropdown")
-          );
-        }}
+      render(
+        html`
+          <ul class="dropdown__list">
+            <li class="dropdown__item">My profile</li>
+            <li class="dropdown__item">My account</li>
+            <li class="dropdown__item">Logout</li>
+          </ul>
+        `,
+        document.getElementById("dropdown")
+      );
+    }}
         @click=${(e) => {
-          render(
-            html`
-              <ul class="dropdown__list">
-                <li class="dropdown__item">My profile</li>
-                <li class="dropdown__item">My account</li>
-                <li class="dropdown__item">Logout</li>
-              </ul>
-            `,
-            document.getElementById("dropdown")
-          );
-        }}
+      render(
+        html`
+          <ul class="dropdown__list">
+            <li class="dropdown__item">My profile</li>
+            <li class="dropdown__item">My account</li>
+            <li class="dropdown__item">Logout</li>
+          </ul>
+        `,
+        document.getElementById("dropdown")
+      );
+    }}
         class="fas fa-bars header__menu-icon "
       ></i>
     </div> -->

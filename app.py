@@ -27,6 +27,7 @@ def about():
 
     with open('msg.json', 'r') as f:
         msg = json.load(f)
+        
     if headers.get('X-API-KEY') == api_key:
         return jsonify(msg)
 
