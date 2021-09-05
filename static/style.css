@@ -473,3 +473,20 @@ body {
     justify-content: center;
     height: 80vh;
 }
+
+.working {
+  animation: working 1s infinite;
+}
+/* make an animation that includes a box shadhow green */
+@keyframes working {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+  }
+  
+}

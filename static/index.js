@@ -345,10 +345,17 @@ const repos = (data) => html`
 
 const about = () => {
   let template = html`
-    <h1 class="title__repo">
-      GitHub Repos <i style="color: #000" class="fab fa-github"></i>
-    </h1>
-    <div class="repo-container">${json.map((repo) => repos(repo))}</div>
+    <div class="repo-container">
+      <div>
+        <h1 class="title__repo">
+          GitHub Repos <i style="color: #000" class="fab fa-github"></i>
+        </h1>
+
+      </div>
+
+
+      ${json.map((repo) => repos(repo))}
+    </div>
   `;
   return template;
 };
@@ -460,4 +467,3 @@ const app = () => html`
 `;
 
 render(app(), document.body);
-
