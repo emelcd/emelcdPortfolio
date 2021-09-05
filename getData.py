@@ -57,6 +57,7 @@ for i in json['items']:
         
     }
     data.append(obj)
+    print(i['name']+ " DOWNLOAD")
     
 
 # dump the data inside a json file
