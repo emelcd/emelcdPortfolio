@@ -339,22 +339,31 @@ const repos = (data) => html`
           `;
         })}
       </div>
+        <div class="card__updated">
+          <i style="padding: 1rem" class="fas fa-calendar-alt"></i>
+          <span>${new Date(data.updated_at).toLocaleDateString()}</span>
+        </div>
+
     </div>
   </div>
 `;
 
+const short_data = (a,b) => {
+  return new Date(b.updated_at) - new Date(a.updated_at);
+}
+
 const about = () => {
+  // shot by data the json
+
   let template = html`
     <div class="repo-container">
       <div>
         <h1 class="title__repo">
           GitHub Repos <i style="color: #000" class="fab fa-github"></i>
         </h1>
-
       </div>
 
-
-      ${json.map((repo) => repos(repo))}
+      ${json.sort(short_data).map((repo) => repos(repo))}
     </div>
   `;
   return template;

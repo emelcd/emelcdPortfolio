@@ -3,11 +3,7 @@ from os import environ
 from uuid import uuid4
 import json
 from datetime import datetime
-
 # get the time now
-print(datetime.now())
-
-
 api_key = environ.get('API_KEY')
 
 app = Flask(__name__)
@@ -25,11 +21,6 @@ def about():
     # get the headers
     headers = request.headers
 
-    with open('msg.json', 'r') as f:
-        msg = json.load(f)
-        
-    if headers.get('X-API-KEY') == api_key:
-        return jsonify(msg)
 
     msg[str(uuid4())] = {
         'msg': data['message'],
@@ -40,6 +31,26 @@ def about():
         json.dump(msg, f)
 
     return redirect('/')
+
+@app.route('/get_msg', methods=['GET', 'POST'])
+def get_msg():
+    if request.method == 'GET':
+        return """
+        <form  method="POST">
+        <input name="password" type="password"></input>
+        <input type="submit">
+        </form>
+        """
+    elif request.method == 'POST':
+        request.form.to_dict()
+        if request.form['password'] == api_key:
+            with open('msg.json', 'r') as f:
+                msg = json.load(f)
+            return jsonify(msg=msg)
+        else:
+            return jsonify(error='Invalid API Key'), 400
+
+
 
 
 if __name__ == '__main__':
