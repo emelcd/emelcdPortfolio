@@ -38,9 +38,9 @@ const myJobs = [
     title: "Técnico Informático",
     pla: "Ayun. de Altura - 2020",
     data: [
-      "Active Directory(A.D)",
       "Implantación y Desarrollo de una App para el Control Vacacional",
       "Desarrollo de Aplicación de Turismo FullStack",
+      "Active Directory(A.D)",
       "Windows Server 2019, Windows 10, Linux(Debian, Arch)...",
       "HelpDesk AnyDesk",
       "Mantenimiento y Reparación de Equipos/Servidores",
@@ -75,28 +75,50 @@ const mySkills = [
       "JavaScript EM6",
       "ReactJS",
       "Angular",
+      "Vue",
       "HTML5/CSS3",
-      "SASS",
+      "SASS/LESS",
       "JQuery",
-      "Bootstrap",
+      "Ajax",
+      "lit-html",
+      "Bootstrap4/5",
+      "TailWindCSS",
+      "MaterializeCSS",
+      "Material-UI",
     ],
   },
   {
     title: "Backend",
     skills: [
       "Flask",
+      "PHP",
       "Django",
-      "API RESTful",
       "Node(Express)",
-      "MySQL",
+      "API RESTful",
+      "SQL",
+      "Webpack",
       "mongoDB",
       "Bash",
       "Apache/Nginx",
+      "AWS",
+      "Heroku",
     ],
   },
   {
     title: "Other",
-    skills: ["Git", "GitHub", "VSCode", "Slack"],
+    skills: [
+      "Git",
+      "MERN",
+      "LAMP",
+      "RF",
+      "GitHub",
+      "VSCode",
+      "WordPress",
+      "Slack",
+      "GitLab",
+      "AdobeXD",
+      "Office365",
+    ],
   },
 ];
 
@@ -121,7 +143,7 @@ const dataUs = (data) => html`
 
 const dataSkills = (data) => html`
   <h4 style="padding:.5rem">${data.title}</h4>
-  <p>
+  <p style="text-align: justify">
     ${data.skills.map((item, index) => {
       return html`
         <span
@@ -339,18 +361,17 @@ const repos = (data) => html`
           `;
         })}
       </div>
-        <div class="card__updated">
-          <i style="padding: 1rem" class="fas fa-calendar-alt"></i>
-          <span>${new Date(data.updated_at).toLocaleDateString()}</span>
-        </div>
-
+      <div class="card__updated">
+        <i style="padding: 1rem" class="fas fa-calendar-alt"></i>
+        <span>${new Date(data.updated_at).toLocaleDateString()}</span>
+      </div>
     </div>
   </div>
 `;
 
-const short_data = (a,b) => {
+const short_data = (a, b) => {
   return new Date(b.updated_at) - new Date(a.updated_at);
-}
+};
 
 const about = () => {
   // shot by data the json
