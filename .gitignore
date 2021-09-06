@@ -2,3 +2,6 @@ script.py
 venv
 msg_rec.json
 getData.py
+.env
+msg.json
+.gitignore
