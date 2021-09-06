@@ -168,7 +168,7 @@ const randomInfo = () => {
 const objDataLeft = [
   {
     title: "Sobre mi",
-    text: "Desarrollador bilingüe con experiencia en Desarrollo Web, en busca de un empleo como junior o prácticas profesionales. El trabajo en equipo, mi capacidad de aprendizaje y la pasión por resolver problemas, son mis principales fortalezas. Soy una persona responsable, con actitud hacia el trabajo y una gran capacidad de adaptación. Me encantaría trabajar en una empresa que me permita aprender y desarollarme personal y profesionalmente. Agradezco mucho tu interés y espero que me conozcas mejor en mi portfolio.",
+    text: "Desarrollador bilingüe con experiencia en Desarrollo Web, en busca de un empleo como junior o prácticas profesionales. El trabajo en equipo, mi capacidad de aprendizaje y la pasión por resolver problemas, son mis principales fortalezas. Soy una persona responsable, con actitud hacia el trabajo y una gran capacidad de adaptación. Me encantaría trabajar en una empresa que me permita aprender y desarollarme personal y profesionalmente. ",
   },
   {
     title: "Mis Estudios",
